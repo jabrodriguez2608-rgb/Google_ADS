@@ -1,0 +1,7 @@
+# Prompt 03 — UTILIDADES CON VALOR ORIGINAL
+
+Implementa cinco herramientas de consumo/ahorro eléctrico del hogar, con fórmulas transparentes y uso sin registro ni subida de datos: (a) coste mensual y anual de un aparato a partir de W, horas/día, días/mes y €/kWh; (b) coste de standby por varios equipos; (c) comparación LED vs bombilla convencional con potencia, uso y precio; (d) proyección de coste de electrodomésticos con varios escenarios; (e) simulador de coste por periodos horarios con precio introducido manualmente por el usuario.
+
+Usa TypeScript puro para el motor de fórmulas en src/lib/calculators/. Documenta unidades, conversión de W a kW, validación, límites, redondeos y supuestos; tests unitarios con casos frontera, valores negativos, cero, coma decimal española y casos de referencia. No utilices precios externos en tiempo real sin fuente/aprobación. Muestra un resultado detallado, tabla comparativa, ejemplo reproducible y limitaciones; permite compartir parámetros por URL sin datos personales. Resultados solo orientativos: no incluir impuestos o peajes salvo que el usuario los aporte y exista fórmula correcta. Herramientas accesibles con teclado y lector de pantalla.
+
+Cada herramienta tendrá una guía de uso realmente útil, con fuentes y fecha de revisión donde aplique. No publiques cinco clones con textos ligeramente cambiados. Añade eventos analíticos de uso preparados para dispararse únicamente conforme al consentimiento aplicable.

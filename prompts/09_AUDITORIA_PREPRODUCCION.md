@@ -1,0 +1,5 @@
+# Prompt 09 — GO/NO-GO DEL LANZAMIENTO
+
+Inspecciona el repositorio, CI y documentación y construye una auditoría de producción con criterios: build/tests/typecheck/lint, calidad de herramientas, formulas, accesibilidad, mobile, 404, navegación, enlaces, privacidad, configuración de terceros, robots/sitemap/canonical, dominio, analytics configurado solo si procede, CMP real integrada correctamente, borradores legales revisados por titular, avisos de fuentes, performance y seguridad. Comprueba que no se muestra AdSense antes de aprobación/consentimiento. Si las credenciales y el dashboard de Cloudflare/AdSense no están disponibles, deja requisitos en estado pendiente y NO los marques como superados.
+
+Entrega un registro de bloqueos (critico/alto/medio/bajo) y una decisión de GO solo cuando no haya bloqueos críticos ni altos y el dueño haya aprobado los pasos manuales. No autoapruebes políticas y no hagas deploy de producción. Propón un checklist exacto de 15 minutos de comprobación tras el lanzamiento.

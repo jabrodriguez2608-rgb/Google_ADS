@@ -1,0 +1,1 @@
+Opcional: importar aquí CSV exportados de Search Console/GA4/AdSense. Suprime datos personales. No subas datos financieros sensibles a un repositorio público. Indica fuente, fecha de descarga, rango temporal y unidades. Sin CSV, el auditor no inventará métricas.

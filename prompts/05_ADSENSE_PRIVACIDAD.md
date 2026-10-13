@@ -1,0 +1,7 @@
+# Prompt 05 — MEDICIÓN, AdSense Y CONFORMIDAD
+
+Prepara la web para solicitud futura a Google AdSense sin asumir ni falsificar aprobación. El código debe instalarse solo cuando tenga ID válido, revisión y consentimiento aplicable. Crea un módulo de configuración con PUBLIC_ADSENSE_CLIENT_ID, PUBLIC_GA4_MEASUREMENT_ID y bandera PUBLIC_ENABLE_ADS=false. Nunca inventes IDs, ni uses un ejemplo ca-pub real. Si la CMP no está correctamente integrada o verificada, bloquea la carga de etiquetas opcionales.
+
+La política de Google exige CMP certificada e integración con IAB TCF para servir anuncios personalizados a visitantes del EEE, Reino Unido y Suiza. Documenta la configuración desde el panel AdSense Privacy & Messaging u otra CMP certificada, y diferencia el comportamiento de anuncios según señal de consentimiento. No desarrolles un banner casero presentándolo como solución suficiente. Incluye política de privacidad/cookies como borradores para validación profesional y un mecanismo para reabrir preferencias.
+
+Añade soporte para ads.txt una vez disponible el editor ID real. No publicar entradas ficticias. Diseña emplazamientos futuros no invasivos sin clics inducidos, sticky agresivos ni interferencia con la herramienta. Prepara GA4 respetando consentimiento; documentación para Search Console (verificación de dominio, sitemap), GA4, AdSense (propiedad, identidad, aprobación). Produce docs/monetizacion.md y docs/checklist-legal.md con pruebas manuales pendientes. No activar anuncios hasta completar controles.
