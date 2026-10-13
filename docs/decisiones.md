@@ -1,0 +1,16 @@
+# Registro de decisiones
+
+Todas fechadas 2026-10-13; decisiones técnicas reversibles, sin aprobación editorial ni autorización de producción.
+
+| ID | Decisión | Motivo / evidencia | Consecuencia / revisión |
+|---|---|---|---|
+| D-001 | Mantener energía provisionalmente | Empate con hogar y evidencia incompleta; investigacion-mercado.md | Reabrir tras cuatro semanas; no afirmar validación comercial |
+| D-002 | Precio manual, sin API ni tarifas actuales | Reduce mantenimiento y dependencia; prompt 03 | Resultados orientativos con supuestos; sin factura completa |
+| D-003 | Diferenciación por escenarios, no por cálculo local | Luzómetro ya declara cálculo local y fórmulas | Validar mejora con tareas reales; no prometer novedad |
+| D-004 | Astro SSG + TS estricto + React islands + Tailwind | Arquitectura prescrita por prompt maestro | Implementar en fase 02, aún no instalado |
+| D-005 | Inicializar main únicamente con kit original; trabajar en feature/01-validacion-nicho | No existía Git | No se ha mergeado desarrollo a main |
+| D-006 | Entregar PR preparado localmente | gh auth status sin sesión y sin remoto | No se puede afirmar PR abierto; falta acceso GitHub |
+| D-007 | Separar investigación de escritorio de validación real | No hay volúmenes ni RPM verificados | Backlog conserva pruebas de cuatro semanas pendientes |
+| D-008 | No adelantar CI ficticia ni deploy en fase documental | No existe package.json; fases 02–06 son secuenciales | Configurar CI real con scripts y lockfile en M6 |
+| D-009 | Estado editorial draft por defecto y publicación solo approved | AGENTS.md y prompt 04 | Los documentos actuales son internos; no hay web publicada |
+| D-010 | Investigación secundaria delegada en lectura, escritura centralizada | Prompt 00 pide delimitar frentes si hay subagentes | Agente investiga hogar/archivos/estudio; coordinador consolida |
