@@ -6,4 +6,4 @@ Incluye bloqueo de servicios opcionales por defecto, pruebas unitarias y de nave
 
 Validación: npm ci, lint, typecheck, 35 tests unitarios, build estático y ocho smoke tests con accesibilidad automatizada a 360 px. Resultados y limitaciones en docs/QA.md. Revisión humana editorial/legal, identidad y configuración de producción pendientes.
 
-Este PR se basa en la rama de investigación para separar su diff. No mergear sin revisión humana ni activar producción.
+Este PR incluye la investigación previa y se dirige a main para que la CI pueda validar el conjunto sin depender del merge del PR documental. No mergear sin revisión humana ni activar producción.

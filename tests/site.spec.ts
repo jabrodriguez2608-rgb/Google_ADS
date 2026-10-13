@@ -7,7 +7,7 @@ for (const slug of slugs) {
   }) => {
     const external: string[] = [];
     page.on("request", (r) => {
-      if (!r.url().startsWith("http://127.0.0.1:4321")) external.push(r.url());
+      if (!r.url().startsWith("http://127.0.0.1:4322")) external.push(r.url());
     });
     await page.goto(`/herramientas/${slug}/`);
     await page.getByRole("button", { name: "Cargar ejemplo ficticio" }).click();

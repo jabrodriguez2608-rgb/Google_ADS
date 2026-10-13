@@ -47,3 +47,6 @@ Verificaciones locales realizadas:
 - Auditoría npm: una dependencia editorial inicial introducía cuatro avisos moderados transitivos; se sustituyó antes del commit por yaml. Instalación posterior informa cero vulnerabilidades conocidas.
 
 Límites: axe no sustituye auditoría manual completa con lector de pantalla; _headers se verifica realmente en Cloudflare tras despliegue autorizado; canonical requiere URL real. No afirmar conformidad legal o Core Web Vitals medidos. CI remota se verificará en el PR. Las fases editoriales, monetización y operaciones conservan gates manuales pendientes.
+
+- Smoke repetido con servidor nuevo en puerto 4322 y --ignore-lock: ocho pruebas correctas. Evita reutilizar un servidor antiguo o el modo background inferido por Astro en agentes.
+- Protección main verificada vía API: quality requerido y actualizado, una aprobación, administradores incluidos, force-push y borrado desactivados.
