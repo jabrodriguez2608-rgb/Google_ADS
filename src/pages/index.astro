@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { tools } from "../lib/catalog";
+---
+
+<Layout
+  title="Entiende tu consumo, compara tus opciones"
+  description="Herramientas de consumo doméstico para explorar costes con tus propios precios y supuestos."
+>
+  <section class="hero">
+    <span class="pill">Energía doméstica, paso a paso</span>
+    <h1>
+      Antes de cambiar un hábito,
+      <br />
+      entiende lo que cuesta.
+    </h1>
+    <p class="intro">
+      Transforma vatios, horas y tu precio de energía en escenarios que puedas
+      comparar. Sin registros y con cada supuesto a la vista.
+    </p>
+    <a class="button" href="/herramientas/">
+      Explorar las herramientas →
+    </a>
+  </section>
+  <div class="strip">
+    <span>01 / Introduce tus datos</span>
+    <span>02 / Revisa los supuestos</span>
+    <span>03 / Compara el resultado</span>
+  </div>
+  <p class="eyebrow">Una pregunta, una herramienta</p>
+  <h2>Calcula con contexto</h2>
+  <div class="grid">
+    {tools.map((t) => (
+      <article class="card">
+        <span class="number">{t.number}</span>
+        <h3>
+          <a href={`/herramientas/${t.slug}/`}>{t.title} →</a>
+        </h3>
+        <p>{t.description}</p>
+      </article>
+    ))}
+  </div>
+  <section class="hero">
+    <h2>Una estimación útil empieza por un supuesto claro.</h2>
+    <p>
+      No conocemos tu tarifa ni cómo funciona cada aparato. Tú introduces el
+      precio; nosotros mostramos la operación y sus límites.
+    </p>
+    <a href="/metodologia/">Leer la metodología →</a>
+  </section>
+</Layout>

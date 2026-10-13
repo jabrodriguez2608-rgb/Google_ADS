@@ -30,3 +30,20 @@ Controles requeridos por AGENTS.md:
 No se declara ningún test de calculadora, build, auditoría móvil o SEO exitoso. La ausencia de estos controles no permite dar por terminada una fase de producto. En M2–M6 deberán ejecutarse todos los controles aplicables y guardar los resultados reales.
 
 Bloqueos externos: autenticación y remoto GitHub para abrir PR; datos de demanda y sesiones con usuarios para validar mercado. No se ha configurado GitHub Actions ni Cloudflare; están en el hito M6, después de disponer de scripts reales. No hay producción, publicidad, billing o DNS modificados.
+
+## MVP y preparación técnica — 2026-10-13
+
+Se implementaron fases 02–06 en orden de dependencia; todavía no se consideran listas para publicación. Astro/React/Tailwind, cinco motores y formularios, cinco guías draft, controles editoriales, bloqueo de etiquetas opcionales y CI. No hay CMP real ni cargador de anuncios. Las pantallas legales son avisos de trabajo, no políticas aprobadas.
+
+Verificaciones locales realizadas:
+
+- npm ci: correcto con caché temporal; la caché npm habitual tenía permisos incompatibles. Se mantuvo intacta.
+- npm run lint: ESLint correcto; incluye comprobación de frontmatter, títulos/canonical duplicados y fuentes con URL/fecha. No puede demostrar veracidad factual; la revisión humana sigue siendo obligatoria.
+- ASTRO_TELEMETRY_DISABLED=1 npm run typecheck: 0 errores, 0 warnings, 0 hints. La variable evita escribir preferencias de telemetría fuera del proyecto.
+- npm run test: 35 pruebas unitarias correctas, cinco motores y denegación de servicios opcionales.
+- npm run build: correcto, 15 páginas estáticas. Las cinco guías draft no generan rutas. Sitemap vacío deliberadamente; noindex global.
+- npm run test:e2e: ocho pruebas correctas con Chromium, ejemplos de cinco herramientas, axe WCAG, móvil 360 px sin desbordamiento, entradas inválidas, foco/teclado, parámetros compartidos, 404, enlaces, metadatos únicos y ausencia de peticiones externas.
+- Fallo corregido: test LED esperaba el resultado de seis horas cuando el ejemplo usa dos. Referencia independiente correcta: (60−9)/1000×2×30×0,20 = 0,612 €/mes; presentación 0,61 €.
+- Auditoría npm: una dependencia editorial inicial introducía cuatro avisos moderados transitivos; se sustituyó antes del commit por yaml. Instalación posterior informa cero vulnerabilidades conocidas.
+
+Límites: axe no sustituye auditoría manual completa con lector de pantalla; _headers se verifica realmente en Cloudflare tras despliegue autorizado; canonical requiere URL real. No afirmar conformidad legal o Core Web Vitals medidos. CI remota se verificará en el PR. Las fases editoriales, monetización y operaciones conservan gates manuales pendientes.

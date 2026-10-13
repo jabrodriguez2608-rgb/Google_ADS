@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+export function getStaticPaths() {
+  return [
+    {
+      page: "metodologia",
+      title: "Metodología y límites",
+      description:
+        "Cómo calculamos energía y coste, con unidades y supuestos explícitos.",
+      body: "Usamos W / 1000 para obtener kW y multiplicamos por horas para obtener kWh. El coste es energía por precio introducido. Las proyecciones anuales repiten doce veces el mes indicado. No simulamos una factura completa ni confirmamos tarifas. Pendiente de revisión editorial humana.",
+    },
+    {
+      page: "sobre-nosotros",
+      title: "Sobre este proyecto",
+      description:
+        "Propósito y estado de revisión del portal de escenarios energéticos.",
+      body: "Este proyecto explora herramientas para comprender el consumo doméstico en España. La identidad del titular y la autoría editorial están pendientes de confirmación. No se atribuyen credenciales profesionales ni revisiones que no hayan ocurrido.",
+    },
+    {
+      page: "contacto",
+      title: "Contacto del proyecto",
+      description:
+        "Estado del canal de contacto del proyecto, pendiente de confirmación.",
+      body: "El canal de contacto del titular todavía no está habilitado. Esta versión no recoge mensajes ni datos personales mediante formularios.",
+    },
+    {
+      page: "aviso-legal",
+      title: "Aviso legal pendiente de revisión",
+      description:
+        "Estado de preparación del aviso legal antes de publicar el sitio.",
+      body: "No hay un aviso legal aprobado. El titular debe aportar identidad y datos exigibles y revisar el texto antes de publicar. Esta pantalla de trabajo no sustituye al aviso legal.",
+    },
+    {
+      page: "privacidad",
+      title: "Privacidad pendiente de revisión",
+      description:
+        "Estado de preparación de la información de privacidad del proyecto.",
+      body: "La política de privacidad no está aprobada. Los cálculos se realizan localmente y esta aplicación no incorpora etiquetas de analítica o publicidad. Antes de publicar se deben revisar el alojamiento, sus registros y cualquier tratamiento real con el titular.",
+    },
+    {
+      page: "cookies",
+      title: "Cookies y preferencias",
+      description:
+        "Estado de las cookies opcionales y de la integración futura de consentimiento.",
+      body: "Las etiquetas opcionales están desactivadas. No hay una CMP integrada ni una política de cookies aprobada. No se muestra un banner que simule obtener consentimiento. Las preferencias podrán reabrirse cuando se integre y verifique una CMP real.",
+    },
+  ].map((item) => ({ params: { page: item.page }, props: item }));
+}
+const { title, description, body, page } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <div class="prose">
+    <p class="eyebrow">Proyecto en revisión</p>
+    <h1>{title}</h1>
+    <p>{body}</p>
+    {page === "metodologia" && (
+      <>
+        <h2>Ejemplo reproducible</h2>
+        <p>
+          1000 W × 2 horas/día × 30 días ÷ 1000 = 60 kWh. Con un precio ficticio
+          de 0,20 €/kWh: 12 € al mes. Doce meses iguales: 720 kWh y 144 €.
+        </p>
+        <h2>Fuentes de contexto</h2>
+        <p>
+          <a href="https://www.idae.es/ahorra-energia/recomendaciones-para-el-ahorro-energetico-en-hogares">
+            IDAE: usos de energía en hogares
+          </a>
+          . Consulta: 13 de octubre de 2026. No trasladamos porcentajes
+          generales a una promesa individual.
+        </p>
+      </>
+    )}
+    <p>
+      <a href="/herramientas/">Volver a las herramientas →</a>
+    </p>
+  </div>
+</Layout>

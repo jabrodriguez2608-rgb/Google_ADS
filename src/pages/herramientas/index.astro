@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { tools } from "../../lib/catalog";
+---
+
+<Layout
+  title="Herramientas de consumo doméstico"
+  description="Cinco preguntas de consumo eléctrico, cinco cálculos locales con precios manuales."
+>
+  <p class="eyebrow">Calculadoras</p>
+  <h1>Elige qué quieres comparar.</h1>
+  <div class="grid">
+    {tools.map((t) => (
+      <article class="card">
+        <span class="number">{t.number}</span>
+        <h2>
+          <a href={`/herramientas/${t.slug}/`}>{t.title}</a>
+        </h2>
+        <p>{t.description}</p>
+      </article>
+    ))}
+  </div>
+</Layout>

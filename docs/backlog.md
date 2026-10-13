@@ -23,3 +23,12 @@ Actualizado: 2026-10-13. Estado global: investigación documental entregada; val
 Cada hito de código exige tests y build antes de cierre, además de lint, typecheck, accesibilidad, móvil, 404 y SEO aplicables. No marcar como pasado un control no ejecutado. Registrar resultados en QA.md y decisiones en decisiones.md. Mantener cambios en feature/* y PR; no merge automático.
 
 La validación de cuatro semanas discurre con trabajo local reversible; si invalida el nicho, reevaluar alcance antes de continuar. Los seis frentes del prompt maestro están representados arriba; coordinación consolida investigación y evita escrituras simultáneas en los mismos archivos.
+
+## Avance técnico posterior (2026-10-13)
+
+- M6.1 desbloqueado: autenticación gh en cuenta correcta, remoto configurado y PR #1 de investigación abierto como draft.
+- M2–M3 implementados localmente con build, 35 tests unitarios y ocho smoke correctos. Revisión humana pendiente.
+- M4: cinco guías draft, schema y filtro aprobados implementados; revisión editorial y SEO de lanzamiento pendientes (noindex global/sitemap vacío).
+- M5: configuración y denegación por defecto implementadas; CMP real, cargador, ads.txt con ID real y revisión legal pendientes. Anuncios y analítica siguen sin activar.
+- M6: workflows y runbook preparados; confirmar ejecución remota y protección de main. Integración Pages pendiente de concesión explícita solo al repositorio objetivo y sin desplegar.
+- M1.1/M1.2 y M7–M10 siguen pendientes. Nada se marca como publicado ni comercialmente validado.

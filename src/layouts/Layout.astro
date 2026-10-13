@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const origin = import.meta.env.PUBLIC_SITE_URL;
+const canonical = origin ? new URL(Astro.url.pathname, origin).href : undefined;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} · Escenarios de energía</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {canonical && <meta property="og:url" content={canonical} />}
+  </head>
+  <body>
+    <a class="skip" href="#contenido">
+      Saltar al contenido
+    </a>
+    <div class="banner">
+      Versión de trabajo · Pendiente de revisión editorial · Sin anuncios
+    </div>
+    <header>
+      <a class="brand" href="/">
+        escenarios<span> / energía</span>
+      </a>
+      <nav aria-label="Principal">
+        <a href="/herramientas/">Herramientas</a>
+        <a href="/metodologia/">Metodología</a>
+        <a href="/guias/">Guías</a>
+      </nav>
+    </header>
+    <main id="contenido">
+      <slot />
+    </main>
+    <footer>
+      <p>
+        <strong>Tus datos, tus supuestos.</strong> Cálculos orientativos en tu
+        navegador. No representan una factura ni una tarifa confirmada.
+      </p>
+      <nav aria-label="Información">
+        <a href="/sobre-nosotros/">Sobre el proyecto</a>
+        <a href="/contacto/">Contacto</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/cookies/">Cookies</a>
+      </nav>
+    </footer>
+  </body>
+</html>
