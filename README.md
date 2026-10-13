@@ -32,3 +32,20 @@
 - Cloudflare Git: https://developers.cloudflare.com/pages/configuration/git-integration/
 - Codex GitHub Action: https://github.com/openai/codex-action
 - Vercel Hobby comercial: https://vercel.com/docs/plans/hobby
+
+## MVP local (en revisión)
+
+Código de trabajo en `feature/02-mvp-energia`; no listo para producción. Requiere Node 24 y npm.
+
+```sh
+npm ci
+npm run dev
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+npx playwright install chromium
+npm run test:e2e
+```
+
+En entornos restringidos puede ser necesario `ASTRO_TELEMETRY_DISABLED=1`. No incluir secrets en PUBLIC_*; estas variables se incorporan al cliente. Las guías draft no se construyen. Noindex y sitemap vacío son intencionales hasta revisión. [Operación y gates de publicación](docs/DEPLOY.md), [QA](docs/QA.md), [backlog](docs/backlog.md).

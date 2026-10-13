@@ -1,0 +1,10 @@
+name: Manual audit checklist
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checklist:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Run prompts/07_AUDITORIA_SEMANAL.md manually. No API key, schedule or billable AI service configured.'

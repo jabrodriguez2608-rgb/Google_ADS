@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const guides = await getCollection(
+  "guides",
+  ({ data }) => data.status === "approved",
+);
+---
+
+<Layout
+  title="Guías revisadas sobre consumo"
+  description="Guías con fuentes y revisión editorial para comprender las estimaciones energéticas."
+>
+  <h1>Guías para entender tus datos.</h1>
+  {guides.length ? (
+    guides.map((g) => (
+      <p>
+        <a href={`/guias/${g.id}/`}>{g.data.title}</a>
+      </p>
+    ))
+  ) : (
+    <p>
+      Las guías están en preparación. Aparecerán aquí cuando hayan pasado
+      revisión humana.
+    </p>
+  )}
+  <a href="/metodologia/">Consultar la metodología</a>
+</Layout>

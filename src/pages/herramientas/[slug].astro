@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Calculator from "../../components/Calculator";
+import { tools } from "../../lib/catalog";
+export function getStaticPaths() {
+  return tools.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { tool },
+  }));
+}
+const { tool } = Astro.props;
+const formulas = {
+  consumo:
+    "Energía mensual (kWh) = W ÷ 1000 × horas/día × días/mes. Coste = energía × precio. El año repite 12 veces ese mes.",
+  standby:
+    "Se calcula W ÷ 1000 × horas en espera × días para cada equipo y se suman energía y coste. No se añaden las horas de uso activo.",
+  led: "Diferencia de coste = (W anterior − W LED) ÷ 1000 × horas/día × días/mes × precio. Retorno simple = coste de sustitución ÷ ahorro mensual positivo.",
+  escenarios:
+    "Para cada precio: coste mensual = W ÷ 1000 × horas/día × días/mes × precio. El uso permanece constante entre escenarios.",
+  periodos:
+    "Coste total = suma de (kWh del periodo × precio de ese periodo). Introduce periodos no solapados del mismo intervalo.",
+};
+---
+
+<Layout title={tool.title} description={tool.description}>
+  <p class="eyebrow">
+    <a href="/herramientas/">Herramientas</a> / {tool.number}
+  </p>
+  <h1>{tool.title}</h1>
+  <p class="intro">{tool.description}</p>
+  <Calculator kind={tool.slug} client:load />
+  <section class="prose">
+    <h2>Cómo se calcula</h2>
+    <p>{formulas[tool.slug]}</p>
+    <h2>Revisa antes de interpretar</h2>
+    <p>
+      La potencia nominal no siempre es la potencia media. En aparatos con
+      ciclos o termostato, utiliza una medición representativa. Los resultados
+      cambian con los datos que introduces.
+    </p>
+    <p>
+      Redondeamos euros y energía a dos decimales al mostrarlos; las operaciones
+      conservan precisión interna. Los precios admitidos son de 0 a 100 €/kWh y
+      las potencias de hasta 100 000 W como límites técnicos, no
+      recomendaciones.
+    </p>
+    <a href="/metodologia/">Ver unidades, supuestos y fuentes →</a>
+  </section>
+  <noscript>
+    Para utilizar la calculadora necesitas JavaScript. La fórmula está explicada
+    arriba.
+  </noscript>
+</Layout>
