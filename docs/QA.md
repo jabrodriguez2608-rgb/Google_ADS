@@ -12,8 +12,8 @@ Comandos y resultados:
 - `gh auth status`: sin sesión iniciada; no existe remoto configurado. PR externo no creado.
 - `node --version`: v24.20.0. `npm --version`: 11.19.0. Versiones disponibles, no selección definitiva de runtime para Astro.
 - Consultas web públicas: realizadas; fuentes y límites en investigacion-mercado.md. No se accedió a herramientas privadas de volumen o RPM.
-- Revisión documental automatizada: comprueba presencia de entregables, veinte hipótesis, suma de pesos/cálculos y enlaces relativos existentes. Resultado registrado al cierre en la conversación; no equivale a tests de producto.
-- `git diff --check`: control de espacios del cambio antes del commit.
+- Revisión documental automatizada: comprueba presencia de entregables, veinte hipótesis, suma de pesos/cálculos y enlaces relativos existentes. Resultado: PASS para nueve entregables, enlaces locales, veinte keywords y seis puntuaciones; no equivale a tests de producto.
+- `git diff --cached --check`: pasó sin incidencias antes del commit. Se añadió .gitignore para excluir metadatos macOS, dependencias, builds, informes de pruebas y variables locales.
 
 Controles requeridos por AGENTS.md:
 
