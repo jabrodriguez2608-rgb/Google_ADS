@@ -37,3 +37,11 @@ La validación de cuatro semanas discurre con trabajo local reversible; si inval
 
 - M6.1 completado: PR #2 del MVP abierto, rama remota subida con CI. M6.2 protección verificada.
 - Integración Cloudflare instalada y limitada a Google_ADS; formulario de build preparado. Creación efectiva del proyecto Pages y despliegue permanecen pendientes porque Save and Deploy publica.
+
+## Seguimiento de lanzamiento — 14/10/2026
+
+- [x] Publicación inicial autorizada en https://google-ads-7zr.pages.dev/.
+- [ ] Integrar PR de indexación controlada en producción y verificar despliegue.
+- [ ] Completar domicilio y revisión de tratamientos reales con el titular (docs/revision-legal.md).
+- [ ] Aprobar y publicar textos legales definitivos.
+- [ ] Solicitar revisión AdSense; no confundir URL publicada con aceptación.

@@ -27,3 +27,7 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+      - run: npm run build && npm run test:e2e
+        env:
+          CF_PAGES: "1"
+          CF_PAGES_BRANCH: main

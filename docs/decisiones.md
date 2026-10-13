@@ -27,3 +27,11 @@ Todas fechadas 2026-10-13; decisiones técnicas reversibles, sin aprobación edi
 
 - D-018: autorización específica recibida para Workflow y conexión Cloudflare→Google_ADS. Permiso Workflow completado por el propietario; instalación Cloudflare verificada con un solo repositorio seleccionado.
 - D-019: no guardar Pages desde Save and Deploy porque dispara publicación. Preparación de formulario y runbook entregada; publicación requiere revisión editorial y autorización separada.
+
+## 2026-10-14 — Indexación del lanzamiento autorizado
+
+El titular aprobó el lanzamiento y solicitó retirar los bloqueos de indexación. La URL pública verificada en navegador es https://google-ads-7zr.pages.dev/. Se permite indexar únicamente portada, listado de herramientas y cinco calculadoras existentes aprobadas. Las guías siguen en borrador y los textos legales provisionales permanecen noindex y fuera del sitemap.
+
+La indexación se activa exclusivamente cuando Cloudflare identifica el build como Pages de la rama main (CF_PAGES=1 y CF_PAGES_BRANCH=main). Los builds locales, CI ordinarios y previews conservan meta/header noindex y robots Disallow. El build genera robots y cabeceras coherentes; canonical usa siempre el origen público y elimina parámetros. CI comprueba ambos modos. No se cambian publicidad, facturación ni DNS.
+
+El titular ha proporcionado datos para preparar textos legales. El borrador revisable está en docs/revision-legal.md; no se publica una política definitiva con domicilio o tratamientos inventados.
