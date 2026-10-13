@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
+const production = process.env.CF_PAGES === "1" && process.env.CF_PAGES_BRANCH === "main";
 const slugs = ["consumo", "standby", "led", "escenarios", "periodos"];
 for (const slug of slugs) {
   test(`${slug}: example, accessibility, mobile and no third parties`, async ({
@@ -38,7 +40,7 @@ for (const slug of slugs) {
     ).toEqual([]);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
       "content",
-      "noindex, nofollow",
+      production ? "index, follow" : "noindex, nofollow",
     );
     expect(external).toEqual([]);
   });
@@ -101,10 +103,16 @@ test("all internal links, unique metadata and draft-free sitemap", async ({
       expect((await request.get(link)).status()).toBe(200);
     }
   }
-  expect(await (await request.get("/sitemap.xml")).text()).not.toContain(
-    "<loc>",
-  );
-  expect(await (await request.get("/robots.txt")).text()).toContain(
-    "Disallow: /",
-  );
+  const headers = readFileSync("dist/_headers", "utf8");
+  expect(headers.includes("X-Robots-Tag: noindex, nofollow")).toBe(!production);
+  expect(headers).toContain("Content-Security-Policy:");
+  const sitemap = await (await request.get("/sitemap.xml")).text();
+  expect((sitemap.match(/<loc>/g) || []).length).toBe(production ? 7 : 0);
+  expect(sitemap).not.toContain("/guias/");
+  expect(sitemap).not.toContain("/privacidad/");
+  expect(await (await request.get("/robots.txt")).text()).toContain(production ? "Allow: /" : "Disallow: /");
+  await page.goto("/herramientas/consumo/?precio=1");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://google-ads-7zr.pages.dev/herramientas/consumo/");
+  await page.goto("/privacidad/");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, nofollow");
 });

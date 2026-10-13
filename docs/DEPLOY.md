@@ -39,3 +39,7 @@ Fuentes consultadas 2026-10-13: https://developers.cloudflare.com/pages/configur
 - No se ha pulsado Save and Deploy. El formulario no constituye un proyecto guardado ni un despliegue. Conservarlo abierto no sustituye guardar la configuración después de la aprobación de lanzamiento.
 - main continúa con el kit inicial: antes de publicar debe revisarse y autorizarse el merge del PR. No lanzar ese main aún sin aplicación.
 - CI del PR: https://github.com/jabrodriguez2608-rgb/Google_ADS/actions. Consultar estado del SHA actual antes de cualquier merge.
+
+## Producción publicada e indexación (14/10/2026)
+
+Origen: https://google-ads-7zr.pages.dev/. Cloudflare Pages construye main con `npm run build`, salida `dist`. No requiere variables secretas para el sitio. El build reconoce exclusivamente `CF_PAGES=1` y `CF_PAGES_BRANCH=main`, variables del proveedor, para permitir indexación. En cualquier otro contexto conserva noindex. No reutilizar un artefacto local/preview para publicar producción: reconstruir en el contexto de Pages. Si cambia el dominio, actualizar SITE_URL en src/lib/publication.ts y sus pruebas. No hay publicidad activa.

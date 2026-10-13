@@ -58,3 +58,7 @@ Límites: axe no sustituye auditoría manual completa con lector de pantalla; _h
 - Cloudflare GitHub App verificada en su pantalla de configuración: Only select repositories; un repositorio, Google_ADS. No se almacenan IDs privados ni credenciales en el repo.
 - Formulario Pages contiene npm run build y dist, sin guardar/desplegar. No hay QA de un despliegue remoto porque no se ha publicado.
 - CI remota iniciada; su estado actual se consulta en los checks del PR (no confundir inicio con éxito).
+
+## 14/10/2026 — Indexación de producción
+
+npm ci: correcto, sin vulnerabilidades reportadas. npm run lint y typecheck: correctos (0 errores/avisos). npm run test: 36 tests correctos. Builds de preview y producción correctos. Playwright: 8/8 en cada modo, incluyendo axe WCAG, anchura 360px, cálculos, enlaces internos, metadatos únicos, canonical sin parámetros y 404 de borrador. Se comprueba que solo producción publica siete URLs en sitemap y retira X-Robots-Tag global; previews conservan bloqueo. La política legal definitiva sigue pendiente de datos completos y revisión del titular.

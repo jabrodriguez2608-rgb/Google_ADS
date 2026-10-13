@@ -1,11 +1,13 @@
 ---
 import "../styles/global.css";
+import { SITE_URL, indexablePaths } from "../lib/publication";
 interface Props {
   title: string;
   description: string;
 }
 const { title, description } = Astro.props;
-const origin = import.meta.env.PUBLIC_SITE_URL;
+const origin = SITE_URL;
+const indexable = import.meta.env.PUBLIC_INDEXABLE && indexablePaths.includes(Astro.url.pathname);
 const canonical = origin ? new URL(Astro.url.pathname, origin).href : undefined;
 ---
 
@@ -16,7 +18,7 @@ const canonical = origin ? new URL(Astro.url.pathname, origin).href : undefined;
     <meta name="viewport" content="width=device-width" />
     <title>{title} · Escenarios de energía</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content={indexable ? "index, follow" : "noindex, nofollow"} />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -28,7 +30,7 @@ const canonical = origin ? new URL(Astro.url.pathname, origin).href : undefined;
       Saltar al contenido
     </a>
     <div class="banner">
-      Versión de trabajo · Pendiente de revisión editorial · Sin anuncios
+      {indexable ? "Cálculos orientativos · Precios introducidos por ti · Sin anuncios" : "Versión de trabajo · Pendiente de revisión editorial · Sin anuncios"}
     </div>
     <header>
       <a class="brand" href="/">
