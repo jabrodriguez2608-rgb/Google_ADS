@@ -50,3 +50,11 @@ Límites: axe no sustituye auditoría manual completa con lector de pantalla; _h
 
 - Smoke repetido con servidor nuevo en puerto 4322 y --ignore-lock: ocho pruebas correctas. Evita reutilizar un servidor antiguo o el modo background inferido por Astro en agentes.
 - Protección main verificada vía API: quality requerido y actualizado, una aprobación, administradores incluidos, force-push y borrado desactivados.
+
+## Verificación de cuentas e integración
+
+- PR #2 abierto: https://github.com/jabrodriguez2608-rgb/Google_ADS/pull/2.
+- Permiso Workflow verificado por subida correcta de los archivos de Actions.
+- Cloudflare GitHub App verificada en su pantalla de configuración: Only select repositories; un repositorio, Google_ADS. No se almacenan IDs privados ni credenciales en el repo.
+- Formulario Pages contiene npm run build y dist, sin guardar/desplegar. No hay QA de un despliegue remoto porque no se ha publicado.
+- CI remota iniciada; su estado actual se consulta en los checks del PR (no confundir inicio con éxito).

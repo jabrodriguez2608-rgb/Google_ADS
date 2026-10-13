@@ -30,3 +30,12 @@ Tras release: comprobar URL canónica HTTPS, 404 real, enlaces, ausencia de borr
 No se cambia presupuesto alguno. Operar sin APIs de pago ni auditoría automática facturable; revisar consumo de CI/Pages antes de crecer. Si se agotan cuotas, detener ejecuciones no esenciales y consultar al propietario; nunca ampliar plan automáticamente. codex-audit.yml es solo un checklist manual, no ejecuta API ni tiene calendario.
 
 Fuentes consultadas 2026-10-13: https://developers.cloudflare.com/pages/configuration/git-integration/ y https://docs.astro.build/en/install-and-setup/. Revalidar opciones del panel al conectar. Alternativa Vercel requiere comprobar condiciones comerciales y coste con autorización; no está configurada.
+
+## Estado verificado tras autorizar accesos
+
+- GitHub CLI tiene el permiso Workflow y la rama del MVP está subida. PR: https://github.com/jabrodriguez2608-rgb/Google_ADS/pull/2.
+- En GitHub Apps, Cloudflare Workers and Pages aparece instalado con «Only select repositories» y exactamente Google_ADS seleccionado. No se amplió a todos los repositorios.
+- Pages reconoce ese repositorio. Formulario preparado con rama main, build npm run build y salida dist; configuración manual, sin preset. Node se fija con .nvmrc.
+- No se ha pulsado Save and Deploy. El formulario no constituye un proyecto guardado ni un despliegue. Conservarlo abierto no sustituye guardar la configuración después de la aprobación de lanzamiento.
+- main continúa con el kit inicial: antes de publicar debe revisarse y autorizarse el merge del PR. No lanzar ese main aún sin aplicación.
+- CI del PR: https://github.com/jabrodriguez2608-rgb/Google_ADS/actions. Consultar estado del SHA actual antes de cualquier merge.

@@ -34,3 +34,6 @@ La validación de cuatro semanas discurre con trabajo local reversible; si inval
 - M1.1/M1.2 y M7–M10 siguen pendientes. Nada se marca como publicado ni comercialmente validado.
 
 - M6.2: protección main aplicada y verificada. El PR del MVP incluye investigación para poder validar el conjunto con CI; no requiere merge previo del PR #1.
+
+- M6.1 completado: PR #2 del MVP abierto, rama remota subida con CI. M6.2 protección verificada.
+- Integración Cloudflare instalada y limitada a Google_ADS; formulario de build preparado. Creación efectiva del proyecto Pages y despliegue permanecen pendientes porque Save and Deploy publica.
